@@ -29,7 +29,7 @@ public class Main {
                         userController.signUp();
                         break;
                     case 2:
-                        userController.signIn();
+                        user = userController.signIn();
                         break;
                     case 3:
                         storeController.getStores();
@@ -50,7 +50,7 @@ public class Main {
                         orderController.getUserOrders();
                         break;
                     case 3:
-                        userController.signOut();
+                        user = userController.signOut();
                         break;
                     case 0:
                     default:
