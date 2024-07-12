@@ -6,6 +6,9 @@ public class Menu {
     private String name;
     private int price;
 
+    public Menu() {
+    }
+
     public Menu(long storeId, String name, int price) {
         this.storeId = storeId;
         this.name = name;
