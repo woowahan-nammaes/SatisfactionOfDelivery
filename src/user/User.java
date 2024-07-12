@@ -7,6 +7,7 @@ public class User {
     private String password;
     private String address;
     private String phoneNumber;
+    private Boolean isLogin;
 
     public Long getId() {
         return id;
@@ -30,5 +31,14 @@ public class User {
 
     public String getPhoneNumber() {
         return phoneNumber;
+    }
+}
+    public Boolean getIsLogin() {
+        return isLogin;
+    }
+
+
+    public void setIsLogin(Boolean isLogin) {
+        this.isLogin = isLogin;
     }
 }
