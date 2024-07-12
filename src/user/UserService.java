@@ -16,3 +16,15 @@ public class UserService {
         return userDao.save(user);
     }
 
+
+    public User signIn(String loginId, String password){
+        User tmpUser = userDao.login(loginId, password);
+        if(tmpUser!=null){
+
+            return tmpUser;
+        }
+
+        return null;
+    }
+
+
