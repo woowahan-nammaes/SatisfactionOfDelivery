@@ -1,3 +1,4 @@
+import menu.Menu;
 import menu.MenuController;
 import order.OrderController;
 import store.StoreController;
@@ -114,6 +115,22 @@ public class Main {
         System.out.println("0. 종료");
         System.out.println("=====================================");
         System.out.print("입력: ");
+    }
+
+    static void getStores(User user) {
+        int storeId = 0;
+        Menu menu = new Menu();
+
+        while (storeId != -1) {
+            storeId = storeController.getStores();
+            if (storeId != -1)  {
+                while (menu != null) {
+                    menu = menuController.getStoreMenus();
+                    if (menu == null) break;
+                    orderController.create(user, menu);
+                }
+            }
+        }
     }
 
     static void printExitMessage() {
