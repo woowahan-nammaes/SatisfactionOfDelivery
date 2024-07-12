@@ -19,7 +19,7 @@ public class Main {
         printLogo();
 
         while (option != 0) {
-            if (isLogin) {
+            if (!isLogin) {
                 printNonMemberMainPage();
                 option = scanner.nextInt();
                 switch (option) {
