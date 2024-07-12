@@ -40,6 +40,21 @@ public class Main {
             } else {
                 printMemberMainPage();
                 option = scanner.nextInt();
+                switch (option) {
+                    case 1:
+                        storeController.getStores();
+                        break;
+                    case 2:
+                        orderController.getUserOrders();
+                        break;
+                    case 3:
+                        userController.signOut();
+                        break;
+                    case 0:
+                    default:
+                        printExitMessage();
+                        return;
+                }
             }
         }
     }
