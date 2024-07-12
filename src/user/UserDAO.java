@@ -11,6 +11,12 @@ public class UserDAO {
 
         return user;
     }
+    public User readByLoginId(String loginId){
+        for (User user : userdb.values()){
+            if(user.getLoginId().equals(loginId)) return user;
+        }
+        return null;
+    }
     public User login(String loginId, String password){
 
         for (User user : userdb.values()) {
