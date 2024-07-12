@@ -33,7 +33,7 @@ public class Main {
                         user = userController.signIn();
                         break;
                     case 3:
-                        storeController.getStores();
+                        getStores(user);
                         break;
                     case 0:
                     default:
@@ -45,7 +45,7 @@ public class Main {
                 option = scanner.nextInt();
                 switch (option) {
                     case 1:
-                        storeController.getStores();
+                        getStores(user);
                         break;
                     case 2:
                         orderController.getUserOrders();
