@@ -19,7 +19,7 @@ public class UserController {
             userView.printFailSignin();
             return null;
         }else{
-            userView.printSuccessSignup();
+            userView.printSuccessSignin();
             return tmpUser;
         }
     }

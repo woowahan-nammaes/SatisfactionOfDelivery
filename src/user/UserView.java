@@ -56,7 +56,7 @@ public class UserView {
         System.out.println("회원가입이 되었습니다.\n우아한 배달의 남매가 되신 것을 환영합니다!\n");
     }
 
-    public void printSuccessSignup(){
+    public void printSuccessSignin(){
         System.out.println("배달의 남매에 오신 것을 환영합니다.");
     }
     public void printFailSignin(){
