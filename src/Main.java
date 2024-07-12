@@ -1,3 +1,4 @@
+import menu.MenuController;
 import order.OrderController;
 import store.StoreController;
 import user.User;
@@ -8,6 +9,7 @@ import java.util.Scanner;
 public class Main {
     private static UserController userController = new UserController();
     private static StoreController storeController = new StoreController();
+    private static MenuController menuController = new MenuController();
     private static OrderController orderController = new OrderController();
 
     public static void main(String[] args) {
