@@ -13,4 +13,18 @@ public class MenuDAO {
         key += 1;
         return menu;
     }
+
+    public List<Menu> getStoreMenus(long storeId) {
+        List<Menu> menusInStore = new ArrayList<>();
+
+        for (long menuKey : menuDb.keySet()) {
+            Menu menu = menuDb.get(menuKey);
+            if (storeId == menu.getStoreId()) {
+                menusInStore.add(menu);
+            }
+        }
+
+        return menusInStore;
+    }
+
 }
