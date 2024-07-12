@@ -1,7 +1,6 @@
 package user;
 
 public class UserController {
-}
     UserView userView = new UserView();
     UserService userService = new UserService();
 
@@ -25,3 +24,14 @@ public class UserController {
         }
     }
 
+    public User signOut(String loginId){
+        User tmpUser = userService.signOut(loginId);
+        if(tmpUser==null){
+            userView.printFailLogout();
+            return null;
+        }else{
+            userView.printSuccessLogout();
+            return tmpUser;
+        }
+    }
+}
