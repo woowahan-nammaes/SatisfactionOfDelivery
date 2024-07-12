@@ -84,4 +84,8 @@ public class Main {
         System.out.print("입력: ");
     }
 
+    static void printExitMessage() {
+        System.out.println("감사합니다! 또 오세요!");
+    }
+
 }
