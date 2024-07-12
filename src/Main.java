@@ -125,7 +125,7 @@ public class Main {
             storeId = storeController.getStores();
             if (storeId != -1)  {
                 while (menu != null) {
-                    menu = menuController.getStoreMenus();
+                    menu = menuController.getStoreMenus(storeId);
                     if (menu == null) break;
                     orderController.create(user, menu);
                 }
