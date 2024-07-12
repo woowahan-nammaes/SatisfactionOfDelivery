@@ -11,3 +11,13 @@ public class UserDAO {
 
         return user;
     }
+    public User login(String loginId, String password){
+
+        for (User user : userdb.values()) {
+            if(user.getLoginId().equals(loginId) && user.getPassword().equals(password)) {
+                user.setIsLogin(true);
+                return user;
+            }
+        }
+        return null;
+    }
