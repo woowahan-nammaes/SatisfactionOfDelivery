@@ -41,11 +41,14 @@ public class User {
     public String getPhoneNumber() {
         return phoneNumber;
     }
-}
+
     public Boolean getIsLogin() {
         return isLogin;
     }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
     public void setIsLogin(Boolean isLogin) {
         this.isLogin = isLogin;
