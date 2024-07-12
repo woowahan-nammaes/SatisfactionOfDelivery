@@ -21,3 +21,10 @@ public class UserDAO {
         }
         return null;
     }
+    public User logout(String loginId){
+        User user = userdb.get(id);
+        user.setIsLogin(false);
+        userdb.put(id, user);
+        return user;
+    }
+}
