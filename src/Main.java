@@ -14,8 +14,17 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         User user = new User();
         boolean isLogin = user.getIsLogin();
+        int option = -1;
 
         printLogo();
+
+        while (option != 0) {
+            if (isLogin) {
+                printNonMemberMainPage();
+                option = scanner.nextInt();
+            }
+        }
+    }
     
     static void printLogo() {
         String logo = """
@@ -47,5 +56,18 @@ public class Main {
                 """;
         System.out.println(logo);
     }
+
+    static void printNonMemberMainPage() {
+        System.out.println("===============배달의만족===============");
+        System.out.println("환영합니다. 배달의만족입니다. 동작을 선택해주세요.");
+        System.out.println("주문은 회원만 가능합니다 :)");
+        System.out.println("1. 회원가입");
+        System.out.println("2. 로그인");
+        System.out.println("3. 가게 조회하기");
+        System.out.println("0. 종료");
+        System.out.println("=====================================");
+        System.out.print("입력: ");
     }
+    }
+
 }
