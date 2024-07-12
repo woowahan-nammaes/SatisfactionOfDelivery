@@ -1,7 +1,6 @@
 package user;
 
 public class UserService {
-}
     public UserDAO userDao = new UserDAO();
 
     public User signUp(String loginId, String password, String name, String address, String phoneNumber){
@@ -28,3 +27,10 @@ public class UserService {
     }
 
 
+    public User signOut(String loginId){
+        if(userDao.readByLoginId(loginId) == null){
+            return null;
+        }
+        return userDao.logout(loginId);
+    }
+}
