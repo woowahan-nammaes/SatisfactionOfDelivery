@@ -1,6 +1,6 @@
 package menu;
 
-public class dummyMenu {
+public class MenuInit {
 
     private final MenuService menuService = new MenuService();
 
