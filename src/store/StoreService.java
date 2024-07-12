@@ -21,12 +21,4 @@ public class StoreService {
     public List<Store> getStoresByCategory(String category) {
         return storeDAO.findByCategory(category);
     }
-
-    public void deleteStore(Long id) {
-        storeDAO.delete(id);
-    }
-
-    public void updateStore(Store store) {
-        storeDAO.save(store); // Assuming save method will update if the store with id exists
-    }
 }
