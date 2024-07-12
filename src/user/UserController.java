@@ -12,3 +12,16 @@ public class UserController {
         userView.printSuccessSignup();
     }
 
+    public User signIn(){
+        userView.printSigninTitle();
+        String[] signinInfos = userView.getSigninForm();
+        User tmpUser=userService.signIn(signinInfos[0],signinInfos[1]);
+        if(tmpUser==null){
+            userView.printFailSignin();
+            return null;
+        }else{
+            userView.printSuccessSignup();
+            return tmpUser;
+        }
+    }
+
