@@ -12,6 +12,9 @@ public class Menu {
         this.price = price;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public long getId() {
         return id;
