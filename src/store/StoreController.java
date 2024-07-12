@@ -33,12 +33,4 @@ public class StoreController {
         return storeService.getStoresByCategory(category);
     }
 
-    public void updateStore(Long id,Store store) {
-        storeService.updateStore(store);
-    }
-
-    // 스토어 삭제
-    public void deleteStore(Long id) {
-        storeService.deleteStore(id);
-    }
 }
