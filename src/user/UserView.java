@@ -40,3 +40,14 @@ public class UserView {
         return true;
     }
 
+    public String[] getSigninForm(){
+        String[] signinInfoTitles = {"아이디", "비밀번호"};
+        String[] signinInfos = new String[2];
+
+        for(int signinInfoIdx = 0; signinInfoIdx<signinInfos.length; signinInfoIdx++){
+            System.out.print(signinInfoTitles[signinInfoIdx] + ": ");
+            signinInfos[signinInfoIdx] = sc.nextLine();
+        }
+        return signinInfos;
+    }
+
