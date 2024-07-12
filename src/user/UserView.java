@@ -1,3 +1,4 @@
+
 package user;
 
 import java.util.Scanner;
@@ -58,3 +59,13 @@ public class UserView {
     public void printSuccessSignup(){
         System.out.println("배달의 남매에 오신 것을 환영합니다.");
     }
+    public void printFailSignin(){
+        System.out.println("아이디, 비밀번호가 잘못되었습니다.");
+    }
+    public void printSuccessLogout(){
+        System.out.println("로그아웃 되었습니다.");
+    }
+    public void printFailLogout(){
+        System.out.println("로그아웃 실패하였습니다. ");
+    }
+}
