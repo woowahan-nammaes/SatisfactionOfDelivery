@@ -1,5 +1,6 @@
 import menu.Menu;
 import menu.MenuController;
+import menu.MenuInit;
 import order.OrderController;
 import store.StoreController;
 import user.User;
@@ -14,6 +15,8 @@ public class Main {
     private static OrderController orderController = new OrderController();
 
     public static void main(String[] args) {
+        initData();
+
         Scanner scanner = new Scanner(System.in);
         User user = new User();
         boolean isLogin = user.getIsLogin();
@@ -60,6 +63,13 @@ public class Main {
                 }
             }
         }
+    }
+
+    private static void initData() {
+        // TODO: store init 해주세용!!
+
+        MenuInit menuInit = new MenuInit();
+        menuInit.init();
     }
 
     static void printLogo() {
