@@ -1,7 +1,9 @@
 package user;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class UserDAO {
-}
     private static Map<Long, User> userdb = new HashMap<>();
     private static long id = 0L;
 
