@@ -22,6 +22,9 @@ public class Main {
             if (isLogin) {
                 printNonMemberMainPage();
                 option = scanner.nextInt();
+            } else {
+                printMemberMainPage();
+                option = scanner.nextInt();
             }
         }
     }
@@ -68,6 +71,17 @@ public class Main {
         System.out.println("=====================================");
         System.out.print("입력: ");
     }
+
+    static void printMemberMainPage() {
+        System.out.println("===============배달의만족===============");
+        System.out.println("환영합니다. 배달의만족입니다. 동작을 선택해주세요.");
+        System.out.println("주문은 회원만 가능합니다 :)");
+        System.out.println("1. 가게 조회하기");
+        System.out.println("2. 주문 기록 조회");
+        System.out.println("3. 로그아웃");
+        System.out.println("0. 종료");
+        System.out.println("=====================================");
+        System.out.print("입력: ");
     }
 
 }
