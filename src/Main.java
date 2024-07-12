@@ -22,13 +22,28 @@ public class Main {
             if (isLogin) {
                 printNonMemberMainPage();
                 option = scanner.nextInt();
+                switch (option) {
+                    case 1:
+                        userController.signUp();
+                        break;
+                    case 2:
+                        userController.signIn();
+                        break;
+                    case 3:
+                        storeController.getStores();
+                        break;
+                    case 0:
+                    default:
+                        printExitMessage();
+                        return;
+                }
             } else {
                 printMemberMainPage();
                 option = scanner.nextInt();
             }
         }
     }
-    
+
     static void printLogo() {
         String logo = """
                 
