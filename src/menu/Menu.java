@@ -6,6 +6,18 @@ public class Menu {
     private String name;
     private int price;
 
+    public Menu() {
+    }
+
+    public Menu(long storeId, String name, int price) {
+        this.storeId = storeId;
+        this.name = name;
+        this.price = price;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
 
     public long getId() {
         return id;

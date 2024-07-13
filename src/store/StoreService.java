@@ -5,11 +5,11 @@ import java.util.List;
 public class StoreService {
     private final StoreDAO storeDAO;
 
-    public StoreService(StoreDAO storeDAO) {
-        this.storeDAO = storeDAO;
+    public StoreService() {
+        storeDAO = new StoreDAO();
     }
 
-    public void addStore( String name, String address, Category category) {
+    public void create( String name, String address, Category category) {
         Store store = new Store(name,address,category);
         storeDAO.save(store);
     }

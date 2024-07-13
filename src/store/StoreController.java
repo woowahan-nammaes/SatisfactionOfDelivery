@@ -7,13 +7,12 @@ public class StoreController {
     private final StoreService storeService;
 
     public StoreController() {
-        StoreDAO storeDAO = new StoreDAO();
-        this.storeService = new StoreService(storeDAO);
+        this.storeService = new StoreService();
         this.storeView = new StoreView();
     }
 
     public void createStore(String name, String address, Category category) {
-        storeService.addStore(name, address, category);
+        storeService.create(name, address, category);
     }
     public int selectCategory(){
         Category selectedCategory= storeView.selectCategory();
