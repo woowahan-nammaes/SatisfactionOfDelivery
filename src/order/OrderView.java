@@ -24,4 +24,13 @@ public class OrderView {
         System.out.println(storeName + "에서 " + menuName + "가 주문되었습니다. :) 맛있게 드세요");
     }
 
+    public void printUserOrdersMessage(List<Order> orders) {
+        for (Order order : orders) {
+            System.out.println(order);
+        }
+    }
+
+    public void printErrorMessage() {
+        System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
+    }
 }

@@ -35,4 +35,9 @@ public class OrderController {
         }
     }
 
+    public void getUserOrders(User user) {
+        List<Order> orders = orderService.getUserOrders(user.getId());
+        orderView.printUserOrdersMessage(orders);
+    }
+
 }
