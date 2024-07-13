@@ -3,6 +3,7 @@ import menu.MenuController;
 import menu.MenuInit;
 import order.OrderController;
 import store.StoreController;
+import store.StoreInit;
 import user.User;
 import user.UserController;
 
@@ -13,7 +14,6 @@ public class Main {
     private static StoreController storeController = new StoreController();
     private static MenuController menuController = new MenuController();
     private static OrderController orderController = new OrderController();
-
     public static void main(String[] args) {
         initData();
 
@@ -67,9 +67,10 @@ public class Main {
 
     private static void initData() {
         // TODO: store init 해주세용!!
-
+        StoreInit storeInit = new StoreInit();
         MenuInit menuInit = new MenuInit();
         menuInit.init();
+        storeInit.init();
     }
 
     static void printLogo() {
