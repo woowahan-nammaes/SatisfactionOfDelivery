@@ -66,7 +66,6 @@ public class Main {
     }
 
     private static void initData() {
-        // TODO: store init 해주세용!!
         StoreInit storeInit = new StoreInit();
         MenuInit menuInit = new MenuInit();
         menuInit.init();
