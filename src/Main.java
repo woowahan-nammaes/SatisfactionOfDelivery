@@ -128,11 +128,11 @@ public class Main {
     }
 
     static void getStores(User user) {
-        int storeId = 0;
+        long storeId = 0;
         Menu menu = new Menu();
 
         while (storeId != -1) {
-            storeId = storeController.getStores();
+            storeId = storeController.getStoreCategories();
             if (storeId != -1)  {
                 while (menu != null) {
                     menu = menuController.getStoreMenus(storeId);
