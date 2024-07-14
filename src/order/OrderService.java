@@ -7,6 +7,7 @@ import user.User;
 import java.util.List;
 
 public class OrderService {
+
     private final OrderDAO orderDAO = OrderDAO.getOrderDAO();
 
     public Order create(User user, Menu menu, Store store) {
