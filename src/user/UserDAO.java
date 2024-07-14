@@ -10,7 +10,6 @@ public class UserDAO {
     public User save(User user){
         user.setId(++id);
         userdb.put(user.getId(), user);
-
         return user;
     }
     public User readByLoginId(String loginId){

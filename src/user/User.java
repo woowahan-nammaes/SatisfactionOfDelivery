@@ -9,9 +9,7 @@ public class User {
     private String phoneNumber;
     private Boolean isLogin;
 
-    public User() {
-        
-    }
+    public User() {}
 
     public User(String loginId, String password, String name, String address, String phoneNumber, Boolean isLogin) {
         this.loginId = loginId;
