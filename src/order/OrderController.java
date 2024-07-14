@@ -1,7 +1,6 @@
 package order;
 
 import menu.Menu;
-import menu.MenuService;
 import store.Store;
 import store.StoreService;
 import user.User;
@@ -9,11 +8,9 @@ import user.User;
 import java.util.List;
 
 public class OrderController {
-    private OrderService orderService = new OrderService();
-    private MenuService menuService = new MenuService();
-    private StoreService storeService = new StoreService();
-
-    private OrderView orderView = new OrderView();
+    private final OrderService orderService = new OrderService();
+    private final StoreService storeService = new StoreService();
+    private final OrderView orderView = new OrderView();
 
     public void create(User user, Menu menu) {
         String menuName = menu.getName();
