@@ -4,8 +4,15 @@ import java.util.*;
 
 public class MenuDAO {
 
+    private static final MenuDAO menuDAO = new MenuDAO();
     private static long key = 0;
-    Map<Long, Menu> menuDb = new HashMap<>();
+    private static final Map<Long, Menu> menuDb = new HashMap<>();
+
+    private MenuDAO() {}
+
+    public static MenuDAO getMenuDAO() {
+        return menuDAO;
+    }
 
     public Menu save(Menu menu) {
         menu.setId(key);
