@@ -21,13 +21,13 @@ public class UserView {
     public String[] getSignupForm(){
         String[] signupInfoTitles = {"아이디", "비밀번호", "닉네임", "주소", "전화번호"};
         String[] signupInfos = new String[5];
-        int signupInfosIdx = 0;
-        while(signupInfosIdx < 5){
-            System.out.print(signupInfoTitles[signupInfosIdx] + ": ");
+        int signupInfoIdx = 0;
+        while(signupInfoIdx < 5){
+            System.out.print(signupInfoTitles[signupInfoIdx] + ": ");
             String signupInfo = sc.nextLine();
             if(isValid(signupInfo)) {
-                signupInfos[signupInfosIdx] = signupInfo;
-                signupInfosIdx++;
+                signupInfos[signupInfoIdx] = signupInfo;
+                signupInfoIdx++;
             }
         }
         return signupInfos;
