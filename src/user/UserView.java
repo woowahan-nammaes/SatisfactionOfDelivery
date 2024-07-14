@@ -57,15 +57,15 @@ public class UserView {
     }
 
     public void printSuccessSignin(){
-        System.out.println("배달의 남매에 오신 것을 환영합니다.");
+        System.out.println("배달의 남매에 오신 것을 환영합니다.\n");
     }
     public void printFailSignin(){
-        System.out.println("아이디, 비밀번호가 잘못되었습니다.");
+        System.out.println("아이디, 비밀번호가 잘못되었습니다.\n");
     }
     public void printSuccessLogout(){
-        System.out.println("로그아웃 되었습니다.");
+        System.out.println("로그아웃 되었습니다.\n");
     }
     public void printFailLogout(){
-        System.out.println("로그아웃 실패하였습니다. ");
+        System.out.println("로그아웃 실패하였습니다.\n");
     }
 }
