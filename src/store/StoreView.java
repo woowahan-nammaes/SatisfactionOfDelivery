@@ -20,11 +20,10 @@ public class StoreView {
             Category selectedCategory = Category.values()[choice-1];
             return selectedCategory;
         } else if (choice == 0) {
-            System.out.println("뒤로 돌아갑니다.");
+            showGoBack();
             return null;
         } else {
-            System.out.println("잘못된 입력입니다.");
-            //TODO: 잘못된입력일 경우 다시 view를 보여줘야해서 재귀형태가 됨 상의하기
+            showWrongInput();
             return selectCategory();
         }
     }
@@ -36,8 +35,7 @@ public class StoreView {
             System.out.println((i + 1) + ". " + categories[i].getDescription());
         }
         System.out.println("0. 뒤로");
-        System.out.println("==================");
-        System.out.print("입력: ");
+        showInputText();
     }
     public long selectStore(List<Store> stores) {
         showStores(stores);
@@ -48,11 +46,10 @@ public class StoreView {
             System.out.println("id:"+selectedStore.getName());
             return selectedStore.getId();
         } else if (choice == 0) {
-            System.out.println("뒤로 돌아갑니다.");
+            showGoBack();
             return -1;
         } else {
-            System.out.println("잘못된 입력입니다.");
-            //TODO: 잘못된입력일 경우 다시 view를 보여줘야해서 재귀형태가 됨 상의하기
+            showWrongInput();
             return selectStore(stores);
         }
     }
@@ -63,7 +60,20 @@ public class StoreView {
             System.out.println(idx++ + ": " + store.getName());
         }
         System.out.println("0. 뒤로");
-        System.out.println("==================");
+        showInputText();
+    }
+
+    private static void showWrongInput(){
+        System.out.println("잘못된 입력입니다.");
+    }
+
+    private static void showGoBack(){
+        System.out.println("뒤로 돌아갑니다.");
+    }
+
+    private static void showInputText() {
+        System.out.println("===================");
         System.out.print("입력: ");
     }
+
 }
