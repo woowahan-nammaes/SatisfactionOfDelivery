@@ -20,7 +20,7 @@ public class Main {
 
         Scanner scanner = new Scanner(System.in);
         User user = new User();
-        boolean isLogin = user.getIsLogin();
+        boolean isLogin = false;
         int option = -1;
 
         printLogo();
@@ -55,7 +55,9 @@ public class Main {
                         orderController.getUserOrders(user);
                         break;
                     case 3:
-                        user = userController.signOut();
+                        if (isLogin) {
+                            user = userController.signOut(user.getLoginId());
+                        }
                         break;
                     case 0:
                     default:
