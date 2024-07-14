@@ -14,6 +14,7 @@ public class Main {
     private static StoreController storeController = new StoreController();
     private static MenuController menuController = new MenuController();
     private static OrderController orderController = new OrderController();
+
     public static void main(String[] args) {
         initData();
 
@@ -51,7 +52,7 @@ public class Main {
                         getStores(user);
                         break;
                     case 2:
-                        orderController.getUserOrders();
+                        orderController.getUserOrders(user);
                         break;
                     case 3:
                         user = userController.signOut();
@@ -74,7 +75,7 @@ public class Main {
 
     static void printLogo() {
         String logo = """
-                
+                                
                 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⢀⠄⡄⡔⡄⡄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
                 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⢂⠅⡕⢔⢕⢱⢱⢱⢱⢍⢗⢢⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
                 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠨⡂⢅⠕⠸⠰⠱⡱⡱⡱⡱⡱⡱⡱⡱⣱⢄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
