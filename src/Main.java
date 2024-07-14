@@ -10,10 +10,10 @@ import user.UserController;
 import java.util.Scanner;
 
 public class Main {
-    private static UserController userController = new UserController();
-    private static StoreController storeController = new StoreController();
-    private static MenuController menuController = new MenuController();
-    private static OrderController orderController = new OrderController();
+    private static final UserController userController = new UserController();
+    private static final StoreController storeController = new StoreController();
+    private static final MenuController menuController = new MenuController();
+    private static final OrderController orderController = new OrderController();
 
     public static void main(String[] args) {
         initData();
