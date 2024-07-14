@@ -9,6 +9,12 @@ public class UserDAO {
     private static final Map<Long, User> userDb = new HashMap<>();
     private static long id = 0L;
 
+    private UserDAO () {}
+
+    public static UserDAO getUserDAO(){
+        return userDAO;
+    }
+
     public User save(User user){
         user.setId(++id);
         userDb.put(user.getId(), user);
