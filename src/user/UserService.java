@@ -10,8 +10,6 @@ public class UserService {
         }
 
         User user = new User(loginId,password,name,address,phoneNumber,false);
-
-        System.out.println("회원가입이 되었어요.");
         return userDao.save(user);
     }
 
