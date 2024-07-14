@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class OrderView {
-    private Scanner sc = new Scanner(System.in);
+    private final Scanner sc = new Scanner(System.in);
 
     public void printCheckOrder(String menuName) {
         System.out.println("==========주문==========");
