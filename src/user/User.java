@@ -9,7 +9,11 @@ public class User {
     private String phoneNumber;
     private Boolean isLogin;
 
-    public User(String loginId, String password,String name, String address, String phoneNumber, Boolean isLogin) {
+    public User() {
+        
+    }
+
+    public User(String loginId, String password, String name, String address, String phoneNumber, Boolean isLogin) {
         this.loginId = loginId;
         this.password = password;
         this.name = name;
