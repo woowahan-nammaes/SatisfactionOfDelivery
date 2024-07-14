@@ -6,8 +6,8 @@ import java.util.Map;
 public class UserDAO {
 
     private static final UserDAO userDAO = new UserDAO();
-    private static final Map<Long, User> userDb = new HashMap<>();
-    private static long id = 0L;
+    private static final Map<Long, User> userDB = new HashMap<>();
+    private static long idx = 0L;
 
     private UserDAO () {}
 
@@ -16,20 +16,20 @@ public class UserDAO {
     }
 
     public User save(User user){
-        user.setId(++id);
-        userDb.put(user.getId(), user);
+        user.setId(++idx);
+        userDB.put(user.getId(), user);
 
         return user;
     }
     public User readByLoginId(String loginId){
-        for (User user : userDb.values()){
+        for (User user : userDB.values()){
             if(user.getLoginId().equals(loginId)) return user;
         }
         return null;
     }
     public User login(String loginId, String password){
 
-        for (User user : userDb.values()) {
+        for (User user : userDB.values()) {
             if(user.getLoginId().equals(loginId) && user.getPassword().equals(password)) {
                 user.setIsLogin(true);
                 return user;
@@ -38,9 +38,9 @@ public class UserDAO {
         return null;
     }
     public User logout(String loginId){
-        User user = userDb.get(id);
+        User user = userDB.get(idx);
         user.setIsLogin(false);
-        userDb.put(id, user);
+        userDB.put(idx, user);
         return user;
     }
 }
