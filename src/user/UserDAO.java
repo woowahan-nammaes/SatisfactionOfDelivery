@@ -30,9 +30,14 @@ public class UserDAO {
         return null;
     }
     public User logout(String loginId){
-        User user = userdb.get(id);
-        user.setIsLogin(false);
-        userdb.put(id, user);
-        return user;
+        for(Long id : userdb.keySet()){
+            if(userdb.get(id).getLoginId().equals(loginId)){
+                User user = userdb.get(id);
+                user.setIsLogin(false);
+                userdb.put(id, user);
+                return user;
+            }
+        }
+        return null;
     }
 }
