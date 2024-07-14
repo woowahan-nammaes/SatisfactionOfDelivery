@@ -17,7 +17,7 @@ public class StoreView {
         int choice = scanner.nextInt();
         scanner.nextLine(); // 개행 문자 처리
         if (choice > 0 && choice <= Category.values().length) {
-            Category selectedCategory = Category.values()[choice - 1];
+            Category selectedCategory = Category.values()[choice-1];
             return selectedCategory;
         } else if (choice == 0) {
             System.out.println("뒤로 돌아갑니다.");
@@ -45,6 +45,7 @@ public class StoreView {
         scanner.nextLine(); // 개행 문자 처리
         if (choice > 0 && choice <= stores.size()) {
             Store selectedStore = stores.get(choice - 1);
+            System.out.println("id:"+selectedStore.getName());
             return selectedStore.getId();
         } else if (choice == 0) {
             System.out.println("뒤로 돌아갑니다.");
@@ -59,7 +60,7 @@ public class StoreView {
         System.out.println("======가게 리스트======");
         int idx = 1;
         for (Store store : stores) {
-            System.out.println(idx + ": " + store.getName());
+            System.out.println(idx++ + ": " + store.getName());
         }
         System.out.println("0. 뒤로");
         System.out.println("==================");
