@@ -4,8 +4,16 @@ import java.time.LocalDateTime;
 import java.util.*;
 
 public class OrderDAO {
-    Map<Long, Order> orderDb = new HashMap<Long, Order>();
+
+    private static final OrderDAO orderDAO = new OrderDAO();
+    private static final Map<Long, Order> orderDb = new HashMap<>();
     private Long idx = 0L;
+
+    private OrderDAO() {}
+
+    public static OrderDAO getOrderDAO() {
+        return orderDAO;
+    }
 
     public Order create(Order order) {
         idx++;

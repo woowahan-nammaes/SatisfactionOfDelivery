@@ -7,13 +7,12 @@ import user.User;
 import java.util.List;
 
 public class OrderService {
-    private OrderDAO orderDAO = new OrderDAO();
+    private final OrderDAO orderDAO = OrderDAO.getOrderDAO();
 
     public Order create(User user, Menu menu, Store store) {
         Order inputOrder = new Order(store, menu, user, OrderStatus.RECEIVE);
-        Order order = orderDAO.create(inputOrder);
 
-        return order;
+        return orderDAO.create(inputOrder);
     }
 
     public List<Order> getUserOrders(Long userId) {
