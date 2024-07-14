@@ -67,7 +67,6 @@ public class Main {
     }
 
     private static void initData() {
-        // TODO: store init 해주세용!!
         StoreInit storeInit = new StoreInit();
         MenuInit menuInit = new MenuInit();
         menuInit.init();
@@ -130,12 +129,12 @@ public class Main {
     }
 
     static void getStores(User user) {
-        int storeId = 0;
+        long storeId = 0;
         Menu menu = new Menu();
 
         while (storeId != -1) {
-            storeId = storeController.getStores();
-            if (storeId != -1) {
+            storeId = storeController.getStoreCategories();
+            if (storeId != -1)  {
                 while (menu != null) {
                     menu = menuController.getStoreMenus(storeId);
                     if (menu == null) break;

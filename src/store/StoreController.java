@@ -14,15 +14,15 @@ public class StoreController {
     public void createStore(String name, String address, Category category) {
         storeService.create(name, address, category);
     }
-    public int selectCategory(){
+    public long getStoreCategories(){
         Category selectedCategory= storeView.selectCategory();
         if(selectedCategory != null) {
             List<Store> stores = getStores(selectedCategory.name());
-            storeView.showStores(stores);
-            //TODO: 메뉴를 선택할 수 있게 값 넘겨주기
+            long storeId = storeView.selectStore(stores);
+            return storeId;
         }
-        //TODO:뒤로가기는 -1로 리턴
-        return -1;
+        //뒤로가기는 -1을 리턴
+        return -1L;
     }
     public Store getStore(Long id) {
         return storeService.getStoreById(id);

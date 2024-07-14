@@ -17,14 +17,15 @@ public class StoreView {
         int choice = scanner.nextInt();
         scanner.nextLine(); // 개행 문자 처리
         if (choice > 0 && choice <= Category.values().length) {
-            Category selectedCategory = Category.values()[choice - 1];
+            Category selectedCategory = Category.values()[choice-1];
             return selectedCategory;
         } else if (choice == 0) {
             System.out.println("뒤로 돌아갑니다.");
             return null;
         } else {
             System.out.println("잘못된 입력입니다.");
-            return null;
+            //TODO: 잘못된입력일 경우 다시 view를 보여줘야해서 재귀형태가 됨 상의하기
+            return selectCategory();
         }
     }
 
@@ -38,12 +39,28 @@ public class StoreView {
         System.out.println("==================");
         System.out.print("입력: ");
     }
-
+    public long selectStore(List<Store> stores) {
+        showStores(stores);
+        int choice = scanner.nextInt();
+        scanner.nextLine(); // 개행 문자 처리
+        if (choice > 0 && choice <= stores.size()) {
+            Store selectedStore = stores.get(choice - 1);
+            System.out.println("id:"+selectedStore.getName());
+            return selectedStore.getId();
+        } else if (choice == 0) {
+            System.out.println("뒤로 돌아갑니다.");
+            return -1;
+        } else {
+            System.out.println("잘못된 입력입니다.");
+            //TODO: 잘못된입력일 경우 다시 view를 보여줘야해서 재귀형태가 됨 상의하기
+            return selectStore(stores);
+        }
+    }
     public void showStores(List<Store> stores) {
         System.out.println("======가게 리스트======");
         int idx = 1;
         for (Store store : stores) {
-            System.out.println(idx + ": " + store.getName());
+            System.out.println(idx++ + ": " + store.getName());
         }
         System.out.println("0. 뒤로");
         System.out.println("==================");
