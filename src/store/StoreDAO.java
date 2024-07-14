@@ -6,14 +6,16 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 public class StoreDAO {
-    private Map<Long,Store> storeDB;
-    private Long idx;
+
+    private static final StoreDAO storeDAO = new StoreDAO();
+    private static final Map<Long,Store> storeDB = new HashMap<>();
+    private static Long idx = 0L;
 
 
+    private StoreDAO() {}
 
-    public StoreDAO() {
-        storeDB = new HashMap<>();
-        idx= 0L;
+    public static StoreDAO getStoreDAO() {
+        return storeDAO;
     }
 
     void save(Store store) {
