@@ -10,7 +10,6 @@ public class User {
     private Boolean isLogin;
 
     public User() {
-        
     }
 
     public User(String loginId, String password, String name, String address, String phoneNumber, Boolean isLogin) {
@@ -40,14 +39,6 @@ public class User {
 
     public String getAddress() {
         return address;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public Boolean getIsLogin() {
-        return isLogin;
     }
 
     public void setId(Long id) {

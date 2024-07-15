@@ -11,30 +11,44 @@ public class OrderController {
     private final OrderService orderService = new OrderService();
     private final StoreService storeService = new StoreService();
     private final OrderView orderView = new OrderView();
+    private static final int OPTION_CONFIRM_ORDER = 1;
+    private static final int OPTION_CANCEL_ORDER = 2;
 
     public void create(User user, Menu menu) {
         String menuName = menu.getName();
         Store store = storeService.getStoreById(menu.getStoreId());
         String storeName = store.getName();
-        int inputOption = 0;
+
         while (true) {
             orderView.printCheckOrder(menuName);
-            inputOption = orderView.getInputNumber();
-            if (inputOption == 1) {
-                Order order = orderService.create(user, menu, store);
-                orderView.printOrderCompleteMessage(storeName, menuName);
+            int inputOption = orderView.getInputNumber();
+            if (handleOrderOption(inputOption, user, menu, store, storeName, menuName)) {
                 break;
-            } else if (inputOption == 2) {
-                break;
-            } else {
-                orderView.printErrorMessage();
             }
         }
+    }
+
+    private boolean handleOrderOption(int inputOption, User user, Menu menu, Store store, String storeName, String menuName) {
+        return switch (inputOption) {
+            case OPTION_CONFIRM_ORDER -> {
+                createOrder(user, menu, store, storeName, menuName);
+                yield true;
+            }
+            case OPTION_CANCEL_ORDER -> true;
+            default -> {
+                orderView.printErrorMessage();
+                yield false;
+            }
+        };
+    }
+
+    private void createOrder(User user, Menu menu, Store store, String storeName, String menuName) {
+        Order order = orderService.create(user, menu, store);
+        orderView.printOrderCompleteMessage(storeName, menuName);
     }
 
     public void getUserOrders(User user) {
         List<Order> orders = orderService.getUserOrders(user.getId());
         orderView.printUserOrdersMessage(orders);
     }
-
 }

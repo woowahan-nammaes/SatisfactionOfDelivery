@@ -6,7 +6,7 @@ public class StoreService {
     private final StoreDAO storeDAO;
 
     public StoreService() {
-        storeDAO = new StoreDAO();
+        storeDAO = StoreDAO.getStoreDAO();
     }
 
     public void create( String name, String address, Category category) {

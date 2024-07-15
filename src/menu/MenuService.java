@@ -4,7 +4,7 @@ import java.util.List;
 
 public class MenuService {
 
-    private static final MenuDAO menuDAO = new MenuDAO();
+    private static final MenuDAO menuDAO = MenuDAO.getMenuDAO();
 
     public List<Menu> getStoreMenus(long storeId) {
         return menuDAO.getStoreMenus(storeId);

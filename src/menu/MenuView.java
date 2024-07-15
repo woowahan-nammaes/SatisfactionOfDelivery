@@ -21,13 +21,14 @@ public class MenuView {
     private static void printMenus(List<Menu> menus) {
         int index = 1;
         for (Menu menu : menus) {
-            System.out.println(index + menu.getName());
+            System.out.println(index + ". " + menu.getName());
+            index++;
         }
         System.out.println("0. 뒤로가기");
     }
 
     private static int enterUserInput() {
-        System.out.println("입력: ");
+        System.out.print("입력: ");
         return Integer.parseInt(sc.nextLine());
     }
 
