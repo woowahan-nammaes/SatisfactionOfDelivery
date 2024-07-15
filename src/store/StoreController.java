@@ -12,10 +12,10 @@ public class StoreController {
     }
 
     public long getStoreCategories(){
-        Category selectedCategory= storeView.selectCategory();
+        Category selectedCategory= storeView.selectCategoryView();
         if(selectedCategory != null) {
             List<Store> stores = getStores(selectedCategory.name());
-            long storeId = storeView.selectStore(stores);
+            long storeId = storeView.selectStoreView(stores);
             return storeId;
         }
         //뒤로가기는 -1을 리턴
