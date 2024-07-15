@@ -28,7 +28,8 @@ public class Main {
         while (option != 0) {
             if (!isLogin) {
                 printNonMemberMainPage();
-                option = scanner.nextInt();
+                option = inputOption(scanner);
+                if (option == -1) continue;
                 switch (option) {
                     case 1:
                         userController.signUp();
@@ -49,7 +50,8 @@ public class Main {
                 }
             } else {
                 printMemberMainPage();
-                option = scanner.nextInt();
+                option = inputOption(scanner);
+                if (option == -1) continue;
                 switch (option) {
                     case 1:
                         getStores(user, isLogin);
@@ -133,6 +135,16 @@ public class Main {
         System.out.println("0. 종료");
         System.out.println("=====================================");
         System.out.print("입력: ");
+    }
+
+    static int inputOption(Scanner scanner) {
+        String input = scanner.next();
+        if (!input.equals("1") && !input.equals("2") && !input.equals("3") && !input.equals("0")) {
+            System.out.println("잘못된 입력입니다. 다시 입력해주세요.\n");
+            return -1;
+        }
+        int option = Integer.parseInt(input);
+        return option;
     }
 
     static void getStores(User user, boolean isLogin) {
