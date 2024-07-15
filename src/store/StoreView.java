@@ -39,7 +39,7 @@ public class StoreView {
         printInputText();
     }
 
-    public long selectStoreView(List<Store> stores) {
+    public Long selectStoreView(List<Store> stores) {
         showStores(stores);
         int choice = scanner.nextInt();
         scanner.nextLine(); // 개행 문자 처리
@@ -48,7 +48,7 @@ public class StoreView {
             return selectedStore.getId();
         } else if (choice == 0) {
             printGoBack();
-            return -1;
+            return -1L;
         } else {
             printWrongInput();
             return selectStoreView(stores);

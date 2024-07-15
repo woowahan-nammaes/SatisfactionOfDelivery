@@ -7,7 +7,7 @@ public class UserDAO {
 
     private static final UserDAO userDAO = new UserDAO();
     private static final Map<Long, User> userDB = new HashMap<>();
-    private static long idx = 0L;
+    private static Long idx = 0L;
 
     private UserDAO () {}
 
@@ -36,7 +36,7 @@ public class UserDAO {
         return null;
     }
     public User logout(String loginId){
-        for(long id : userDB.keySet()){
+        for(Long id : userDB.keySet()){
             if(userDB.get(id).getLoginId().equals(loginId)){
                 User user = userDB.get(id);
                 user.setIsLogin(false);
