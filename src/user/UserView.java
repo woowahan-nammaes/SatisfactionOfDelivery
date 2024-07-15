@@ -1,6 +1,8 @@
 
 package user;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class UserView {
@@ -18,19 +20,19 @@ public class UserView {
         System.out.println("==============================");
     }
 
-    public String[] getSignupForm(){
-        String[] signupInfoTitles = {"아이디", "비밀번호", "닉네임", "주소", "전화번호"};
-        String[] signupInfos = new String[5];
+    public Map<UserInfoTitle, String> getSignupForm(){
+        Map<UserInfoTitle, String> signupForm = new HashMap<>();
+        UserInfoTitle[] signupInfoTitles = UserInfoTitle.values();
         int signupInfoIdx = 0;
-        while(signupInfoIdx < 5){
+        while(signupInfoIdx < signupInfoTitles.length) {
             System.out.print(signupInfoTitles[signupInfoIdx] + ": ");
             String signupInfo = sc.nextLine();
             if(isValid(signupInfo)) {
-                signupInfos[signupInfoIdx] = signupInfo;
+                signupForm.put(signupInfoTitles[signupInfoIdx], signupInfo);
                 signupInfoIdx++;
             }
         }
-        return signupInfos;
+        return signupForm;
     }
 
     public boolean isValid(String signupInfo){
@@ -41,15 +43,15 @@ public class UserView {
         return true;
     }
 
-    public String[] getSigninForm(){
-        String[] signinInfoTitles = {"아이디", "비밀번호"};
-        String[] signinInfos = new String[2];
-
-        for(int signinInfoIdx = 0; signinInfoIdx<signinInfos.length; signinInfoIdx++){
+    public Map<UserInfoTitle, String> getSigninForm(){
+        Map<UserInfoTitle, String> signinForm = new HashMap<>();
+        UserInfoTitle[] signinInfoTitles = UserInfoTitle.values();
+        for(int signinInfoIdx = 0; signinInfoIdx<signinInfoTitles.length; signinInfoIdx++){
             System.out.print(signinInfoTitles[signinInfoIdx] + ": ");
-            signinInfos[signinInfoIdx] = sc.nextLine();
+            String signinInfo = sc.nextLine();
+            signinForm.put(signinInfoTitles[signinInfoIdx], signinInfo);
         }
-        return signinInfos;
+        return signinForm;
     }
 
     public void printSuccessSignup(){
