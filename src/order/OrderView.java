@@ -27,6 +27,11 @@ public class OrderView {
 
     public void printUserOrdersMessage(List<Order> orders) {
         int idx = 1;
+        if (orders.isEmpty()) {
+            System.out.println("주문 내역이 없습니다.");
+            return;
+        }
+
         System.out.println("==================주문 내역=================");
         for (Order order : orders) {
             System.out.println(idx++ + ". 가게명: " + order.getStore().getName()
