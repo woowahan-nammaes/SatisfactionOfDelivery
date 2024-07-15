@@ -1,6 +1,7 @@
 
 package user;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -25,10 +26,11 @@ public class UserView {
         UserInfoTitle[] signupInfoTitles = UserInfoTitle.values();
         int signupInfoIdx = 0;
         while(signupInfoIdx < signupInfoTitles.length) {
-            System.out.print(signupInfoTitles[signupInfoIdx] + ": ");
+            UserInfoTitle signupField = signupInfoTitles[signupInfoIdx];
+            System.out.print(signupField.getFieldName() + ": ");
             String signupInfo = sc.nextLine();
             if(isValid(signupInfo)) {
-                signupForm.put(signupInfoTitles[signupInfoIdx], signupInfo);
+                signupForm.put(signupField, signupInfo);
                 signupInfoIdx++;
             }
         }
@@ -45,11 +47,12 @@ public class UserView {
 
     public Map<UserInfoTitle, String> getSigninForm(){
         Map<UserInfoTitle, String> signinForm = new HashMap<>();
-        UserInfoTitle[] signinInfoTitles = UserInfoTitle.values();
+        UserInfoTitle[] signinInfoTitles = Arrays.copyOfRange(UserInfoTitle.values(), 0, 2);
         for(int signinInfoIdx = 0; signinInfoIdx<signinInfoTitles.length; signinInfoIdx++){
-            System.out.print(signinInfoTitles[signinInfoIdx] + ": ");
+            UserInfoTitle signinField = signinInfoTitles[signinInfoIdx];
+            System.out.print(signinField.getFieldName() + ": ");
             String signinInfo = sc.nextLine();
-            signinForm.put(signinInfoTitles[signinInfoIdx], signinInfo);
+            signinForm.put(signinField, signinInfo);
         }
         return signinForm;
     }
