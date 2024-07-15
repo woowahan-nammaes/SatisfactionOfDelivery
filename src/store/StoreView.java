@@ -30,7 +30,7 @@ public class StoreView {
 
     private void showCategories() {
         Category[] categories = Category.values();
-        System.out.println("======카테고리======");
+        System.out.println("============== 카테고리 ===============");
         for (int i = 0; i < categories.length; i++) {
             System.out.println((i + 1) + ". " + categories[i].getDescription());
         }
@@ -55,7 +55,8 @@ public class StoreView {
         }
     }
     private void showStores(List<Store> stores) {
-        System.out.println("======가게 리스트======");
+        System.out.println("=====================================");
+        System.out.println("============= 가게 리스트 ==============");
         int idx = 1;
         for (Store store : stores) {
             System.out.println(idx++ + ": " + store.getName());
@@ -74,7 +75,7 @@ public class StoreView {
     }
 
     private static void printLine(){
-        System.out.println("===================");
+        System.out.println("=====================================");
     }
 
     private static void printInputText() {
