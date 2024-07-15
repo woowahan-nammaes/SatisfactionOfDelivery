@@ -137,9 +137,9 @@ public class Main {
 
     static void getStores(User user) {
         long storeId = 0;
-        Menu menu = new Menu();
 
         while (storeId != -1) {
+            Menu menu = new Menu();
             storeId = storeController.getStoreCategories();
             if (storeId != -1)  {
                 while (menu != null) {
