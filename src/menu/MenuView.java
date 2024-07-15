@@ -33,7 +33,7 @@ public class MenuView {
     }
 
     private static void printEndLine() {
-        System.out.println("===================");
+        System.out.println("=======================");
     }
 
     private static void printStoreTitle(String storeName) {
