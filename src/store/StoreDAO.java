@@ -30,8 +30,4 @@ public class StoreDAO {
                 .filter(store -> store.getCategory().name().equalsIgnoreCase(category))
                 .collect(Collectors.toList());
     }
-
-    void delete(Long id) {
-        storeDB.remove(id);
-    }
 }

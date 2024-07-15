@@ -11,9 +11,6 @@ public class StoreController {
         this.storeView = new StoreView();
     }
 
-    public void createStore(String name, String address, Category category) {
-        storeService.create(name, address, category);
-    }
     public long getStoreCategories(){
         Category selectedCategory= storeView.selectCategory();
         if(selectedCategory != null) {
@@ -23,9 +20,6 @@ public class StoreController {
         }
         //뒤로가기는 -1을 리턴
         return -1L;
-    }
-    public Store getStore(Long id) {
-        return storeService.getStoreById(id);
     }
 
     public List<Store> getStores(String category) {
