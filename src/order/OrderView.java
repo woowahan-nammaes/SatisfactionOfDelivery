@@ -38,7 +38,7 @@ public class OrderView {
                     + " / 메뉴: " + order.getMenu().getName()
                     + " / 주소: " + order.getUser().getAddress());
         }
-        System.out.println("===========================================");
+        System.out.println("==========================================");
         System.out.println();
     }
 
