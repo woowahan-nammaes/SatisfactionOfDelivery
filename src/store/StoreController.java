@@ -11,21 +11,15 @@ public class StoreController {
         this.storeView = new StoreView();
     }
 
-    public void createStore(String name, String address, Category category) {
-        storeService.create(name, address, category);
-    }
     public long getStoreCategories(){
-        Category selectedCategory= storeView.selectCategory();
+        Category selectedCategory= storeView.selectCategoryView();
         if(selectedCategory != null) {
             List<Store> stores = getStores(selectedCategory.name());
-            long storeId = storeView.selectStore(stores);
+            long storeId = storeView.selectStoreView(stores);
             return storeId;
         }
         //뒤로가기는 -1을 리턴
         return -1L;
-    }
-    public Store getStore(Long id) {
-        return storeService.getStoreById(id);
     }
 
     public List<Store> getStores(String category) {

@@ -12,7 +12,7 @@ public class StoreView {
         this.scanner = new Scanner(System.in);
     }
 
-    public Category selectCategory() {
+    public Category selectCategoryView() {
         showCategories();
         int choice = scanner.nextInt();
         scanner.nextLine(); // 개행 문자 처리
@@ -20,58 +20,64 @@ public class StoreView {
             Category selectedCategory = Category.values()[choice-1];
             return selectedCategory;
         } else if (choice == 0) {
-            showGoBack();
+            printGoBack();
             return null;
         } else {
-            showWrongInput();
-            return selectCategory();
+            printWrongInput();
+            return selectCategoryView();
         }
     }
 
-    public void showCategories() {
+    private void showCategories() {
         Category[] categories = Category.values();
         System.out.println("======카테고리======");
         for (int i = 0; i < categories.length; i++) {
             System.out.println((i + 1) + ". " + categories[i].getDescription());
         }
         System.out.println("0. 뒤로");
-        showInputText();
+        printLine();
+        printInputText();
     }
-    public long selectStore(List<Store> stores) {
-        showStores(stores);
+
+    public long selectStoreView(List<Store> stores) {
+        printStores(stores);
         int choice = scanner.nextInt();
         scanner.nextLine(); // 개행 문자 처리
         if (choice > 0 && choice <= stores.size()) {
             Store selectedStore = stores.get(choice - 1);
             return selectedStore.getId();
         } else if (choice == 0) {
-            showGoBack();
+            printGoBack();
             return -1;
         } else {
-            showWrongInput();
-            return selectStore(stores);
+            printWrongInput();
+            return selectStoreView(stores);
         }
     }
-    public void showStores(List<Store> stores) {
+    private void printStores(List<Store> stores) {
         System.out.println("======가게 리스트======");
         int idx = 1;
         for (Store store : stores) {
             System.out.println(idx++ + ": " + store.getName());
         }
         System.out.println("0. 뒤로");
-        showInputText();
+        printLine();
+        printInputText();
     }
 
-    private static void showWrongInput(){
+    private static void printWrongInput(){
         System.out.println("잘못된 입력입니다.");
     }
 
-    private static void showGoBack(){
+    private static void printGoBack(){
         System.out.println("뒤로 돌아갑니다.");
     }
 
-    private static void showInputText() {
+    private static void printLine(){
         System.out.println("===================");
+    }
+
+    private static void printInputText() {
         System.out.print("입력: ");
     }
 

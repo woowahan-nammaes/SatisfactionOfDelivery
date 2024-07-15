@@ -24,10 +24,6 @@ public class Store {
         return name;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
     public Category getCategory() {
         return category;
     }
