@@ -30,7 +30,6 @@ public class MenuDAO {
                 menusInStore.add(menu);
             }
         }
-
         return menusInStore;
     }
 

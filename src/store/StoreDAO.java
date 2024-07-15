@@ -11,7 +11,6 @@ public class StoreDAO {
     private static final Map<Long,Store> storeDB = new HashMap<>();
     private static Long idx = 0L;
 
-
     private StoreDAO() {}
 
     public static StoreDAO getStoreDAO() {

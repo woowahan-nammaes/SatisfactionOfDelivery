@@ -14,8 +14,7 @@ public class Order {
     private OrderStatus status;
     private LocalDateTime createdAt;
 
-    public Order() {
-    }
+    public Order() {}
 
     public Order(Store store, Menu menu, User user, OrderStatus status) {
         this.store = store;
