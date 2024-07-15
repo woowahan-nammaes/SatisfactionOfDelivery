@@ -20,12 +20,14 @@ public class UserDAO {
         userDB.put(user.getId(), user);
         return user;
     }
+
     public User readByLoginId(String loginId){
         for (User user : userDB.values()){
             if(user.getLoginId().equals(loginId)) return user;
         }
         return null;
     }
+
     public User login(String loginId, String password){
         for (User user : userDB.values()) {
             if(user.getLoginId().equals(loginId) && user.getPassword().equals(password)) {
@@ -35,6 +37,7 @@ public class UserDAO {
         }
         return null;
     }
+
     public User logout(String loginId){
         for(Long id : userDB.keySet()){
             if(userDB.get(id).getLoginId().equals(loginId)){
