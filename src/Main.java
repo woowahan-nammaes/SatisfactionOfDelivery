@@ -40,7 +40,7 @@ public class Main {
                         }
                         break;
                     case 3:
-                        getStores(user);
+                        getStores(user, isLogin);
                         break;
                     case 0:
                     default:
@@ -52,7 +52,7 @@ public class Main {
                 option = scanner.nextInt();
                 switch (option) {
                     case 1:
-                        getStores(user);
+                        getStores(user, isLogin);
                         break;
                     case 2:
                         orderController.getUserOrders(user);
@@ -135,16 +135,20 @@ public class Main {
         System.out.print("입력: ");
     }
 
-    static void getStores(User user) {
+    static void getStores(User user, boolean isLogin) {
         long storeId = 0;
-        Menu menu = new Menu();
 
         while (storeId != -1) {
+            Menu menu = new Menu();
             storeId = storeController.getStoreCategories();
             if (storeId != -1)  {
                 while (menu != null) {
                     menu = menuController.getStoreMenus(storeId);
                     if (menu == null) break;
+                    if (!isLogin) {
+                        printUnableOrderToNonMember();
+                        return;
+                    }
                     orderController.create(user, menu);
                 }
             }
@@ -153,6 +157,10 @@ public class Main {
 
     static void printExitMessage() {
         System.out.println("감사합니다! 또 오세요!");
+    }
+
+    static void printUnableOrderToNonMember() {
+        System.out.println("주문은 회원만 가능합니다. 로그인해주세요!\n");
     }
 
 }
