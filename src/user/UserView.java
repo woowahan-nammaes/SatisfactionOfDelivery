@@ -1,6 +1,8 @@
 
 package user;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class UserView {
@@ -18,38 +20,38 @@ public class UserView {
         System.out.println("==============================");
     }
 
-    public String[] getSignupForm(){
-        String[] signupInfoTitles = {"아이디", "비밀번호", "닉네임", "주소", "전화번호"};
-        String[] signupInfos = new String[5];
-        int signupInfosIdx = 0;
-        while(signupInfosIdx < 5){
-            System.out.print(signupInfoTitles[signupInfosIdx] + ": ");
+    public Map<UserInfoTitle, String> getSignupForm(){
+        Map<UserInfoTitle, String> signupForm = new HashMap<>();
+        UserInfoTitle[] signupInfoTitles = UserInfoTitle.values();
+        int signupInfoIdx = 0;
+        while(signupInfoIdx < signupInfoTitles.length) {
+            System.out.print(signupInfoTitles[signupInfoIdx] + ": ");
             String signupInfo = sc.nextLine();
             if(isValid(signupInfo)) {
-                signupInfos[signupInfosIdx] = signupInfo;
-                signupInfosIdx++;
+                signupForm.put(signupInfoTitles[signupInfoIdx], signupInfo);
+                signupInfoIdx++;
             }
         }
-        return signupInfos;
+        return signupForm;
     }
 
     public boolean isValid(String signupInfo){
-        if(signupInfo.isEmpty()) {
+        if(signupInfo.trim().isEmpty()) {
             System.out.println("정보를 입력해주세요.");
             return false;
         }
         return true;
     }
 
-    public String[] getSigninForm(){
-        String[] signinInfoTitles = {"아이디", "비밀번호"};
-        String[] signinInfos = new String[2];
-
-        for(int signinInfoIdx = 0; signinInfoIdx<signinInfos.length; signinInfoIdx++){
+    public Map<UserInfoTitle, String> getSigninForm(){
+        Map<UserInfoTitle, String> signinForm = new HashMap<>();
+        UserInfoTitle[] signinInfoTitles = UserInfoTitle.values();
+        for(int signinInfoIdx = 0; signinInfoIdx<signinInfoTitles.length; signinInfoIdx++){
             System.out.print(signinInfoTitles[signinInfoIdx] + ": ");
-            signinInfos[signinInfoIdx] = sc.nextLine();
+            String signinInfo = sc.nextLine();
+            signinForm.put(signinInfoTitles[signinInfoIdx], signinInfo);
         }
-        return signinInfos;
+        return signinForm;
     }
 
     public void printSuccessSignup(){
@@ -57,15 +59,15 @@ public class UserView {
     }
 
     public void printSuccessSignin(){
-        System.out.println("배달의 남매에 오신 것을 환영합니다.");
+        System.out.println("배달의 남매에 오신 것을 환영합니다.\n");
     }
     public void printFailSignin(){
-        System.out.println("아이디, 비밀번호가 잘못되었습니다.");
+        System.out.println("아이디, 비밀번호가 잘못되었습니다.\n");
     }
     public void printSuccessLogout(){
-        System.out.println("로그아웃 되었습니다.");
+        System.out.println("로그아웃 되었습니다.\n");
     }
     public void printFailLogout(){
-        System.out.println("로그아웃 실패하였습니다. ");
+        System.out.println("로그아웃 실패하였습니다.\n");
     }
 }

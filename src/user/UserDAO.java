@@ -18,7 +18,6 @@ public class UserDAO {
     public User save(User user){
         user.setId(++idx);
         userDB.put(user.getId(), user);
-
         return user;
     }
     public User readByLoginId(String loginId){
@@ -28,7 +27,6 @@ public class UserDAO {
         return null;
     }
     public User login(String loginId, String password){
-
         for (User user : userDB.values()) {
             if(user.getLoginId().equals(loginId) && user.getPassword().equals(password)) {
                 user.setIsLogin(true);
@@ -38,9 +36,14 @@ public class UserDAO {
         return null;
     }
     public User logout(String loginId){
-        User user = userDB.get(idx);
-        user.setIsLogin(false);
-        userDB.put(idx, user);
-        return user;
+        for(long id : userDB.keySet()){
+            if(userDB.get(id).getLoginId().equals(loginId)){
+                User user = userDB.get(id);
+                user.setIsLogin(false);
+                userDB.put(id, user);
+                return user;
+            }
+        }
+        return null;
     }
 }

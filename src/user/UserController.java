@@ -1,20 +1,29 @@
 package user;
 
+import java.util.Map;
+
 public class UserController {
     UserView userView = new UserView();
     UserService userService = new UserService();
 
     public void signUp(){
         userView.printSignupTitle();
-        String[] signupInfos = userView.getSignupForm();
-        userService.signUp(signupInfos[0], signupInfos[1], signupInfos[2], signupInfos[3], signupInfos[4]);
+        Map<UserInfoTitle, String> signupForm = userView.getSignupForm();
+        userService.signUp(
+                signupForm.get(UserInfoTitle.LOGINID),
+                signupForm.get(UserInfoTitle.PASSWORD),
+                signupForm.get(UserInfoTitle.NAME),
+                signupForm.get(UserInfoTitle.ADDRESS),
+                signupForm.get(UserInfoTitle.PHONENUMBER));
         userView.printSuccessSignup();
     }
 
     public User signIn(){
         userView.printSigninTitle();
-        String[] signinInfos = userView.getSigninForm();
-        User tmpUser=userService.signIn(signinInfos[0],signinInfos[1]);
+        Map<UserInfoTitle, String> signinForm = userView.getSigninForm();
+        User tmpUser = userService.signIn(
+                signinForm.get(UserInfoTitle.LOGINID),
+                signinForm.get(UserInfoTitle.PASSWORD));
         if(tmpUser==null){
             userView.printFailSignin();
             return null;
