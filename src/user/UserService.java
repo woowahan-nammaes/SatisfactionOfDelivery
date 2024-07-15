@@ -1,7 +1,7 @@
 package user;
 
 public class UserService {
-    public UserDAO userDao = new UserDAO();
+    public UserDAO userDao = UserDAO.getUserDAO();
 
     public User signUp(String loginId, String password, String name, String address, String phoneNumber){
         if (userDao.readByLoginId(loginId) != null) {

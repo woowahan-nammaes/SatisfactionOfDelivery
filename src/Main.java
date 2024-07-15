@@ -10,10 +10,10 @@ import user.UserController;
 import java.util.Scanner;
 
 public class Main {
-    private static UserController userController = new UserController();
-    private static StoreController storeController = new StoreController();
-    private static MenuController menuController = new MenuController();
-    private static OrderController orderController = new OrderController();
+    private static final UserController userController = new UserController();
+    private static final StoreController storeController = new StoreController();
+    private static final MenuController menuController = new MenuController();
+    private static final OrderController orderController = new OrderController();
 
     public static void main(String[] args) {
         initData();
@@ -35,6 +35,9 @@ public class Main {
                         break;
                     case 2:
                         user = userController.signIn();
+                        if (user != null) {
+                            isLogin = true;
+                        }
                         break;
                     case 3:
                         getStores(user);
@@ -57,6 +60,9 @@ public class Main {
                     case 3:
                         if (isLogin) {
                             user = userController.signOut(user.getLoginId());
+                            if (user != null) {
+                                isLogin = false;
+                            }
                         }
                         break;
                     case 0:
@@ -121,7 +127,6 @@ public class Main {
     static void printMemberMainPage() {
         System.out.println("===============배달의만족===============");
         System.out.println("환영합니다. 배달의만족입니다. 동작을 선택해주세요.");
-        System.out.println("주문은 회원만 가능합니다 :)");
         System.out.println("1. 가게 조회하기");
         System.out.println("2. 주문 기록 조회");
         System.out.println("3. 로그아웃");
