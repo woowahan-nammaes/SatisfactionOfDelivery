@@ -12,7 +12,6 @@ public class OrderService {
 
     public Order create(User user, Menu menu, Store store) {
         Order inputOrder = new Order(store, menu, user, OrderStatus.RECEIVE);
-
         return orderDAO.create(inputOrder);
     }
 

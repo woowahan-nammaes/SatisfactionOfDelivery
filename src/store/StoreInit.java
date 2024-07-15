@@ -6,7 +6,6 @@ public class StoreInit {
     private final StoreService storeService;
     public StoreInit() {
         storeService = new StoreService();
-
     }
 
     public void init(){

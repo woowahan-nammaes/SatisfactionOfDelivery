@@ -17,8 +17,7 @@ public class StoreView {
         int choice = scanner.nextInt();
         scanner.nextLine();
         if (choice > 0 && choice <= Category.values().length) {
-            Category selectedCategory = Category.values()[choice-1];
-            return selectedCategory;
+            return Category.values()[choice-1];
         } else if (choice == 0) {
             printGoBack();
             return null;

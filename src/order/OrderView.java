@@ -21,8 +21,7 @@ public class OrderView {
     }
 
     public void printOrderCompleteMessage(String storeName, String menuName) {
-        System.out.println(storeName + "에서 " + menuName + "가 주문되었습니다. :) 맛있게 드세요");
-        System.out.println();
+        System.out.println(storeName + "에서 " + menuName + "가 주문되었습니다. :) 맛있게 드세요\n");
     }
 
     public void printUserOrdersMessage(List<Order> orders) {
@@ -38,8 +37,7 @@ public class OrderView {
                     + " / 메뉴: " + order.getMenu().getName()
                     + " / 주소: " + order.getUser().getAddress());
         }
-        System.out.println("==========================================");
-        System.out.println();
+        System.out.println("==========================================\n");
     }
 
     public void printErrorMessage() {

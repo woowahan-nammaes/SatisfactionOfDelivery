@@ -11,12 +11,8 @@ public class MenuController {
     private static final StoreService storeService = new StoreService();
 
     public Menu getStoreMenus(Long storeId){
-
         List<Menu> menus = menuService.getStoreMenus(storeId);
-
         String storeName = storeService.getStoreById(storeId).getName();
-
         return menuView.getMenu(menus, storeName);
-        
     }
 }

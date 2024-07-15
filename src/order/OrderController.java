@@ -43,7 +43,7 @@ public class OrderController {
     }
 
     private void createOrder(User user, Menu menu, Store store, String storeName, String menuName) {
-        Order order = orderService.create(user, menu, store);
+        orderService.create(user, menu, store);
         orderView.printOrderCompleteMessage(storeName, menuName);
     }
 
