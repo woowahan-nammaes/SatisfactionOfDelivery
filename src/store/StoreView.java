@@ -43,7 +43,6 @@ public class StoreView {
         scanner.nextLine(); // 개행 문자 처리
         if (choice > 0 && choice <= stores.size()) {
             Store selectedStore = stores.get(choice - 1);
-            System.out.println("id:"+selectedStore.getName());
             return selectedStore.getId();
         } else if (choice == 0) {
             showGoBack();
