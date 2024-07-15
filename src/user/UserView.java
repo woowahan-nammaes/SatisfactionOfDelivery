@@ -36,7 +36,7 @@ public class UserView {
     }
 
     public boolean isValid(String signupInfo){
-        if(signupInfo.isEmpty()) {
+        if(signupInfo.trim().isEmpty()) {
             System.out.println("정보를 입력해주세요.");
             return false;
         }
