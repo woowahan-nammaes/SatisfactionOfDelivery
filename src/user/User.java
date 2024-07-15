@@ -36,18 +36,6 @@ public class User {
         return password;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public Boolean getIsLogin() {
-        return isLogin;
-    }
-
     public void setId(Long id) {
         this.id = id;
     }
