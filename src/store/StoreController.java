@@ -15,8 +15,7 @@ public class StoreController {
         Category selectedCategory= storeView.selectCategoryView();
         if(selectedCategory != null) {
             List<Store> stores = getStores(selectedCategory.name());
-            Long storeId = storeView.selectStoreView(stores);
-            return storeId;
+            return storeView.selectStoreView(stores);
         }
         return -1L;
     }
