@@ -28,7 +28,7 @@ public class MenuView {
     }
 
     private static int enterUserInput() {
-        System.out.println("입력: ");
+        System.out.print("입력: ");
         return Integer.parseInt(sc.nextLine());
     }
 
