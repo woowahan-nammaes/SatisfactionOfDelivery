@@ -11,11 +11,11 @@ public class StoreController {
         this.storeView = new StoreView();
     }
 
-    public long getStoreCategories(){
+    public Long getStoreCategories(){
         Category selectedCategory= storeView.selectCategoryView();
         if(selectedCategory != null) {
             List<Store> stores = getStores(selectedCategory.name());
-            long storeId = storeView.selectStoreView(stores);
+            Long storeId = storeView.selectStoreView(stores);
             return storeId;
         }
         return -1L;

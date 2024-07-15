@@ -1,7 +1,7 @@
 package store;
 
 public class Store {
-    private long id;
+    private Long id;
     private String name;
     private String address;
     private Category category;
@@ -12,11 +12,11 @@ public class Store {
         this.category = category;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

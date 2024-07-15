@@ -6,7 +6,7 @@ public class MenuDAO {
 
     private static final MenuDAO menuDAO = new MenuDAO();
     private static final Map<Long, Menu> menuDB = new HashMap<>();
-    private static long idx = 0;
+    private static Long idx = 0L;
 
     private MenuDAO() {}
 
@@ -21,10 +21,10 @@ public class MenuDAO {
         return menu;
     }
 
-    public List<Menu> getStoreMenus(long storeId) {
+    public List<Menu> getStoreMenus(Long storeId) {
         List<Menu> menusInStore = new ArrayList<>();
 
-        for (long menuKey : menuDB.keySet()) {
+        for (Long menuKey : menuDB.keySet()) {
             Menu menu = menuDB.get(menuKey);
             if (storeId == menu.getStoreId()) {
                 menusInStore.add(menu);

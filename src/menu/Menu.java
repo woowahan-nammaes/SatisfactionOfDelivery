@@ -1,29 +1,29 @@
 package menu;
 
 public class Menu {
-    private long id;
-    private long storeId;
+    private Long id;
+    private Long storeId;
     private String name;
     private int price;
 
     public Menu() {
     }
 
-    public Menu(long storeId, String name, int price) {
+    public Menu(Long storeId, String name, int price) {
         this.storeId = storeId;
         this.name = name;
         this.price = price;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public long getStoreId() {
+    public Long getStoreId() {
         return storeId;
     }
 

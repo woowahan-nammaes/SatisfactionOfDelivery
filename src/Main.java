@@ -148,7 +148,7 @@ public class Main {
     }
 
     static void getStores(User user, boolean isLogin) {
-        long storeId = 0;
+        Long storeId = 0L;
 
         while (storeId != -1) {
             Menu menu = new Menu();
