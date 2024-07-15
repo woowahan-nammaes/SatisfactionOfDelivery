@@ -18,7 +18,6 @@ public class StoreController {
             long storeId = storeView.selectStoreView(stores);
             return storeId;
         }
-        //뒤로가기는 -1을 리턴
         return -1L;
     }
 
