@@ -25,9 +25,14 @@ public class OrderView {
     }
 
     public void printUserOrdersMessage(List<Order> orders) {
+        int idx = 1;
+        System.out.println("==================주문 내역=================");
         for (Order order : orders) {
-            System.out.println(order);
+            System.out.println(idx + ". 가게명: " + order.getStore().getName()
+                    + " / 메뉴: " + order.getMenu().getName()
+                    + " / 주소: " + order.getUser().getAddress());
         }
+        System.out.println("===========================================");
     }
 
     public void printErrorMessage() {
