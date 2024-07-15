@@ -32,7 +32,7 @@ public class OrderView {
             return;
         }
 
-        System.out.println("==================주문 내역=================");
+        System.out.println("\n==================주문 내역=================");
         for (Order order : orders) {
             System.out.println(idx++ + ". 가게명: " + order.getStore().getName()
                     + " / 메뉴: " + order.getMenu().getName()
