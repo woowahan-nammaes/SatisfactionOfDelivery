@@ -35,6 +35,9 @@ public class Main {
                         break;
                     case 2:
                         user = userController.signIn();
+                        if (user != null) {
+                            isLogin = true;
+                        }
                         break;
                     case 3:
                         getStores(user);
@@ -57,6 +60,9 @@ public class Main {
                     case 3:
                         if (isLogin) {
                             user = userController.signOut(user.getLoginId());
+                            if (user != null) {
+                                isLogin = false;
+                            }
                         }
                         break;
                     case 0:
